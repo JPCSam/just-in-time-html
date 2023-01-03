@@ -389,6 +389,11 @@ img {}
     padding: 0 40px;
 }
 
+.inner-width {
+    width: 1180px;
+    padding: 0 40px;
+}
+
 .content-title {}
 
 .content-text>p {
@@ -445,8 +450,7 @@ img {}
     width: 100%;
     height: auto;
     overflow: hidden;
-    transition: transform 0.5s ease-in-out;
-    transform: scale(1);
+    border-radius: 8px;
 }
 
 .img-hover-wrapper:hover>img {
@@ -457,6 +461,8 @@ img {}
 .img-hover-wrapper>img {
     width: 100%;
     object-fit: cover;
+    transition: transform 0.5s ease-in-out;
+    transform: scale(1);
 }
 
 .contact-block {
