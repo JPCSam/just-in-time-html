@@ -47,6 +47,14 @@ module.exports = {
 				collapseWhitespace: true,
 			},
 		}),
+		new HtmlWebpackPlugin({
+			template: './src/contact-us.html',
+			filename: './contact-us.html',
+			minify: {
+				removeComments: true,
+				collapseWhitespace: true,
+			},
+		}),
 		new CopyPlugin({
 			patterns: [{ from: './src/assets', to: './assets' }],
 		}),

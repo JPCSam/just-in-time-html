@@ -1,3 +1,4 @@
 import './sass/main.scss';
+import './js/script.js';
 
-console.log('Webpack Loaded.');
+console.log('Webpack loaded');
