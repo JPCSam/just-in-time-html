@@ -1,7 +1,7 @@
 $primary-colour: #131618;
 $secondary-colour: #ffcd26;
 $primary-font: 'Urbanist', sans-serif;
-$heading-font: 'Fugaz One';
+$heading-font: 'Fugaz One', cursive;
 
 html {
 	min-width: 100%;
@@ -54,7 +54,7 @@ h2 {
 }
 h3 {
 	margin: 0;
-	font-family: $heading-font;
+	font-family: $primary-font;
 	font-weight: 600;
 	font-size: 1.6rem;
 	color: black;
