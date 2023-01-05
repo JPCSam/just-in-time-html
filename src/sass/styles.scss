@@ -109,6 +109,9 @@ p {
 		display: none !important;
 	}
 }
+.hide-on-desktop {
+	display: none !important;
+}
 .white-text {
 	color: white;
 }
@@ -202,7 +205,6 @@ p {
 	margin-top: 80px;
 	@include for_breakpoint(mobile) {
 		margin-top: 0 !important;
-		margin-bottom: 80px !important;
 	}
 }
 .splash-image {
