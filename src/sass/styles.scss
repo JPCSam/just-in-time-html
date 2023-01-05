@@ -1,8 +1,9 @@
+$size__site_content_width: 1024px;
+
 $media_queries: (
 	'mobile': 'only screen and (max-width: 667px)',
-	'tablet':
-		'only screen and (min-width: 668px) and (max-width: $size__site_content_width)',
-	'desktop': 'only screen and (min-width: ($size__site_content_width + 1))',
+	'tablet': 'only screen and (min-width: 668px) and (max-width: 1024px)',
+	'desktop': 'only screen and (min-width: 1025px)',
 	'landscape': 'screen and (orientation:landscape) ',
 	'portrait': 'screen and (orientation:portrait) ',
 );
@@ -110,7 +111,9 @@ p {
 	}
 }
 .hide-on-desktop {
-	display: none !important;
+	@include for_breakpoint(desktop) {
+		display: none !important;
+	}
 }
 .white-text {
 	color: white;
@@ -427,7 +430,7 @@ p {
 	}
 }
 
-.navbar-mobile {
+.navbar-mobile-wrapper {
 	width: 100%;
 	z-index: 999;
 	position: fixed;
