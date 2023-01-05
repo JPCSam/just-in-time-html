@@ -1,7 +1,36 @@
+$media_queries: (
+	'mobile': 'only screen and (max-width: 667px)',
+	'tablet':
+		'only screen and (min-width: 668px) and (max-width: $size__site_content_width)',
+	'desktop': 'only screen and (min-width: ($size__site_content_width + 1))',
+	'landscape': 'screen and (orientation:landscape) ',
+	'portrait': 'screen and (orientation:portrait) ',
+);
+
+@mixin for_breakpoint($breakpoints) {
+	$conditions: ();
+	@each $breakpoint in $breakpoints {
+		// If the key exists in the map
+		$conditions: append(
+			$conditions,
+			#{inspect(map-get($media_queries, $breakpoint))},
+			comma
+		);
+	}
+
+	@media #{$conditions} {
+		@content;
+	}
+}
+
 $primary-colour: #131618;
 $secondary-colour: #ffcd26;
 $primary-font: 'Urbanist', sans-serif;
 $heading-font: 'Fugaz One', cursive;
+
+$items: 4;
+$transition-duration: 0.5s;
+$transition-delay: 0.05s;
 
 html {
 	min-width: 100%;
@@ -9,6 +38,7 @@ html {
 	width: 100%;
 	height: 100%;
 	box-sizing: border-box;
+	overflow-x: hidden !important;
 }
 body {
 	min-width: 100%;
@@ -18,6 +48,7 @@ body {
 	box-sizing: border-box;
 	height: 100vh;
 	margin: 0;
+	overflow-x: hidden !important;
 }
 * {
 	box-sizing: inherit;
@@ -42,6 +73,9 @@ h1 {
 	margin: 0;
 	line-height: 8rem;
 	user-select: none;
+	@include for_breakpoint(mobile) {
+		font-size: 3em;
+	}
 }
 h2 {
 	font-family: $heading-font;
@@ -51,6 +85,9 @@ h2 {
 	margin: 0;
 	line-height: 3rem;
 	user-select: none;
+	@include for_breakpoint(mobile) {
+		font-size: 2em;
+	}
 }
 h3 {
 	margin: 0;
@@ -67,6 +104,11 @@ p {
 	font-size: 1.2rem;
 	color: black;
 }
+.hide-on-mobile {
+	@include for_breakpoint(mobile) {
+		display: none !important;
+	}
+}
 .white-text {
 	color: white;
 }
@@ -78,6 +120,9 @@ p {
 }
 .max-width {
 	width: 1260px;
+	@include for_breakpoint(mobile) {
+		width: 100% !important;
+	}
 }
 .align-center {
 	text-align: center;
@@ -153,12 +198,16 @@ p {
 }
 .splash {
 	position: relative;
-	height: 800px;
+	height: 100vh;
 	margin-top: 80px;
+	@include for_breakpoint(mobile) {
+		margin-top: 0 !important;
+		margin-bottom: 80px !important;
+	}
 }
 .splash-image {
 	position: absolute;
-	height: 800px;
+	height: 100%;
 	width: 100%;
 	z-index: 1;
 	> img {
@@ -189,11 +238,24 @@ p {
 		text-align: center !important;
 		overflow-wrap: normal;
 	}
+	@include for_breakpoint(mobile) {
+		padding: 0 !important;
+		> h1 {
+			width: 100% !important;
+			text-align: center;
+		}
+		> h2 {
+			width: 100% !important;
+			text-align: center;
+		}
+		> h3 {
+			padding: 0 10px !important;
+		}
+	}
 }
 .mini-splash {
 	position: relative;
 	height: 400px;
-	margin-top: 80px;
 	> .splash-image {
 		position: absolute;
 		height: 400px;
@@ -211,6 +273,15 @@ p {
 		font-size: 3rem;
 		margin-right: 20px;
 	}
+	@include for_breakpoint(mobile) {
+		border: 0 !important;
+		> i {
+			font-size: 1.2rem;
+		}
+		> h2 {
+			font-size: 2rem;
+		}
+	}
 }
 .background-wrapper {
 	display: flex;
@@ -224,6 +295,9 @@ p {
 	display: flex;
 	justify-content: center;
 	padding: 3em;
+	@include for_breakpoint(mobile) {
+		padding: 30px 0 !important;
+	}
 }
 .content-section {
 	padding: 0 40px;
@@ -235,6 +309,11 @@ p {
 .content-text {
 	> p {
 		margin: 2em;
+	}
+	@include for_breakpoint(mobile) {
+		> p {
+			margin: 1em 0 !important;
+		}
 	}
 }
 .content-image {
@@ -251,12 +330,19 @@ p {
 	display: flex;
 	justify-content: space-between;
 	margin: 1em 0;
+	@include for_breakpoint(mobile) {
+		margin-top: 40px !important;
+		flex-direction: column !important;
+	}
 }
 .icon {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	width: 300px;
+	@include for_breakpoint(mobile) {
+		width: 100% !important;
+	}
 }
 .icon-wrapper {
 	height: 200px;
@@ -265,6 +351,12 @@ p {
 	> i {
 		font-size: 8rem;
 		margin: auto;
+	}
+	@include for_breakpoint(mobile) {
+		height: fit-content !important;
+		> i {
+			font-size: 4em !important;
+		}
 	}
 }
 .gallery-3 {
@@ -304,6 +396,7 @@ p {
 	}
 }
 .contact-block {
+	position: relative;
 	display: flex;
 	border: solid white 4px;
 	padding: 1.5em;
@@ -316,61 +409,187 @@ p {
 	> h2 {
 		font-family: $primary-font !important;
 	}
-}
-@media only screen and (max-width: 700px) {
-	.hide-on-mobile {
-		display: none !important;
+	> a {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
 	}
-	.max-width {
-		width: 100% !important;
-	}
-	.navbar-wrapper {
-		display: none;
-	}
-	.splash-text {
-		padding: 0 !important;
-		> h3 {
-			padding: 0 10px !important;
-		}
-	}
-	.splash-logo {
-		height: 200px;
-	}
-	.number-prompt {
-		border: 0 !important;
-		> i {
-			font-size: 1.2rem;
-		}
-		> h2 {
-			font-size: 2rem;
-		}
-	}
-	.content-wrapper {
-		padding: 30px 0 !important;
-	}
-	.content-text {
-		> p {
-			margin: 1em 0 !important;
-		}
-	}
-	.icons {
-		margin-top: 40px !important;
-		flex-direction: column !important;
-	}
-	.icon {
-		width: 100% !important;
-	}
-	.icon-wrapper {
-		height: fit-content !important;
-		> i {
-			font-size: 4em !important;
-		}
-	}
-	.contact-block {
+	@include for_breakpoint(mobile) {
 		margin: 1.5em 0 !important;
 		> h3 {
 			font-size: 1.5rem;
 			word-wrap: break-word;
 		}
+	}
+}
+
+.navbar-mobile {
+	width: 100%;
+	z-index: 999;
+	position: fixed;
+	background-color: $primary-colour;
+}
+/* Toggle Functionality */
+#toggle {
+	display: none; //hides the checkbox
+}
+// Styles for the 'open' state, if the checkbox is checked
+#toggle:checked {
+	//Any element you need to change the style if menu is open goes here, using the sibling selector (~)
+	& ~ .toggle-container .button-toggle {
+		&:before {
+			transform: translateY(-50%) rotate(45deg) scale(1);
+		}
+
+		&:after {
+			transform: translateY(-50%) rotate(-45deg) scale(1);
+		}
+	}
+
+	// Open Nav
+	& ~ .nav {
+		margin-bottom: 100px;
+		pointer-events: auto;
+		transform: translate(50px, 50px);
+
+		// Restoring nav items from 'lines' in the menu icon
+		.nav-item {
+			height: 40px;
+			font-family: $primary-font;
+			font-size: 1.2rem;
+			line-height: 40px;
+			text-decoration: none;
+			letter-spacing: 0;
+			color: white;
+			margin-top: 0;
+			opacity: 1;
+			transform: scaleY(1);
+			transition: $transition-duration, opacity 0.1s;
+
+			// Setting delays for the nav items in open transition
+			@for $i from 1 through $items {
+				&:nth-child(#{$i}) {
+					$delay: ($items - $i) * $transition-delay;
+					transition-delay: $delay;
+					&:before {
+						transition-delay: $delay;
+					}
+				}
+			}
+
+			// Hide the lines
+			&:before {
+				opacity: 0;
+			}
+		}
+	}
+}
+
+/* Toggle Button */
+
+.button-toggle {
+	position: absolute;
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	margin: 25px;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	border-radius: 100%;
+	transition: $transition-duration + 0.1;
+
+	// Making the 'X' icon using `:before` and `:after` pseudo-elements
+	// Initially hidden beause of `scale(0)` transformation
+
+	&:before,
+	&:after {
+		position: absolute;
+		content: '';
+		top: 50%;
+		left: 0;
+		width: 100%;
+		height: 2px;
+		background-color: white;
+		border-radius: 5px;
+		transition: $transition-duration;
+	}
+
+	&:before {
+		transform: translateY(-50%) rotate(45deg) scale(0);
+	}
+
+	&:after {
+		transform: translateY(50%) rotate(-45deg) scale(0);
+	}
+}
+
+/* Menu */
+
+.nav {
+	display: inline-block;
+	margin: 25px 25px 20px;
+	pointer-events: none;
+	transition: $transition-duration;
+}
+
+// Showing nav items as lines, making up the hamburger menu icon
+.nav-item {
+	position: relative;
+	display: inline-block;
+	float: left;
+	clear: both;
+	color: transparent;
+	font-size: 14px;
+	letter-spacing: -6.2px;
+	height: 7px;
+	line-height: 7px;
+	text-transform: uppercase;
+	white-space: nowrap;
+	text-decoration: none;
+	transform: scaleY(0.2);
+	transition: $transition-duration, opacity 1s;
+
+	//Set delays for the nav items in close transition
+	@for $i from 1 through $items {
+		&:nth-child(#{$i}) {
+			$delay: ($i - 1) * $transition-delay;
+			transition-delay: $delay;
+			&:before {
+				transition-delay: $delay;
+			}
+		}
+	}
+
+	// Adjusting width for first line
+	&:nth-child(1) {
+		letter-spacing: -8px;
+	}
+
+	// Adjusting width for second line
+	&:nth-child(2) {
+		letter-spacing: -7px;
+	}
+
+	// Adjusting the fourth element onwards
+	&:nth-child(n + 4) {
+		letter-spacing: -8px;
+		margin-top: -7px;
+		opacity: 0;
+	}
+
+	//getting lines for the hamburger menu icon
+	&:before {
+		position: absolute;
+		content: '';
+		top: 50%;
+		left: 0;
+		width: 100%;
+		height: 2px;
+		background-color: white;
+		transform: translateY(-50%) scaleY(5);
+		transition: $transition-duration;
 	}
 }

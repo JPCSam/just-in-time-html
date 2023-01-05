@@ -11,7 +11,7 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
 	</head>
 	<body>
-		<div class="navbar">
+		<div class="navbar hide-on-mobile">
 			<div class="navbar-wrapper">
 				<div class="navbar-logo">
 					<img height="90%" src="./assets/images/logo.png" alt="" />
@@ -31,6 +31,21 @@
 					</div>
 				</div>
 			</div>
+		</div>
+
+		<div class="navbar-mobile">
+			<input id="toggle" type="checkbox" />
+
+			<label class="toggle-container" for="toggle">
+				<span class="button button-toggle"></span>
+			</label>
+
+			<nav class="nav">
+				<a class="nav-item" href="./index.html">HOME</a>
+				<a class="nav-item" href="./what-we-do.html">WHAT WE DO</a>
+				<a class="nav-item" href="./autoprotect.html">AUTOPROTECT</a>
+				<a class="nav-item" href="./contact-us.html">CONTACT US</a>
+			</nav>
 		</div>
 
 		<div class="mini-splash">
@@ -68,16 +83,21 @@
 						<h2 class="white-text">Contact</h2>
 					</div>
 					<div class="contact-block">
+						<a href="tel:01182292233"></a>
 						<i class="fa-solid fa-phone white-text"></i>
 						<h3 class="white-text">0118 229 2233</h3>
 					</div>
 					<div class="contact-block">
+						<a href="tel:07983988937"></a>
 						<i class="fa-solid fa-mobile-screen-button white-text"></i>
 						<h3 class="white-text">07983988937</h3>
 					</div>
-					<div class="contact-block hide-on-mobile">
+					<div class="contact-block">
+						<a
+							href="mailto:hello@justintimemobilemechanics.co.uk?subject=Contact via Website"
+							target="_blank"></a>
 						<i class="fa-solid fa-at white-text"></i>
-						<h3 class="white-text">hello@justintimemobilemechanics.co.uk</h3>
+						<h3 class="white-text">Email me</h3>
 					</div>
 				</div>
 			</div>
