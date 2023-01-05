@@ -10,6 +10,7 @@
 		"webpack-cli": "^5.0.1"
 	},
 	"devDependencies": {
+		"autoprefixer": "^10.4.13",
 		"copy-webpack-plugin": "^11.0.0",
 		"css-loader": "^6.7.3",
 		"extract-loader": "^5.1.0",
@@ -17,6 +18,8 @@
 		"html-loader": "^4.2.0",
 		"html-webpack-plugin": "^5.5.0",
 		"node-sass": "^8.0.0",
+		"postcss-loader": "^7.0.2",
+		"sass-autoprefixer": "^1.0.1",
 		"sass-loader": "^13.2.0",
 		"style-loader": "^3.3.1",
 		"webpack-dev-server": "^4.11.1",
@@ -25,5 +28,13 @@
 	"scripts": {
 		"build": "webpack --config webpack.prod.js",
 		"start": "webpack-dev-server --open --hot --config webpack.dev.js"
-	}
+	},
+	"browserslist": [
+		"defaults",
+		"not ie < 11",
+		"last 2 versions",
+		"> 1%",
+		"iOS 7",
+		"last 3 iOS versions"
+	]
 }
