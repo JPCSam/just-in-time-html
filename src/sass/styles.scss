@@ -73,6 +73,9 @@ h1 {
 	color: black;
 	margin: 0;
 	line-height: 8rem;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
 	user-select: none;
 	@include for_breakpoint(mobile) {
 		font-size: 3em;
@@ -85,6 +88,9 @@ h2 {
 	color: black;
 	margin: 0;
 	line-height: 3rem;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
 	user-select: none;
 	@include for_breakpoint(mobile) {
 		font-size: 2em;
@@ -97,6 +103,9 @@ h3 {
 	font-size: 1.6rem;
 	color: black;
 	margin: 0;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
 	user-select: none;
 }
 p {
@@ -115,6 +124,9 @@ p {
 		display: none !important;
 	}
 }
+.primary-font-override {
+	font-family: $primary-font;
+}
 .white-text {
 	color: white;
 }
@@ -132,6 +144,12 @@ p {
 }
 .align-center {
 	text-align: center;
+}
+.align-left {
+	text-align: left;
+}
+.align-right {
+	text-align: right;
 }
 .line {
 	width: 75%;
@@ -218,6 +236,7 @@ p {
 	> img {
 		height: 100%;
 		width: 100%;
+		-o-object-fit: cover;
 		object-fit: cover;
 	}
 }
@@ -261,6 +280,9 @@ p {
 .mini-splash {
 	position: relative;
 	height: 400px;
+	@include for_breakpoint(desktop) {
+		margin-top: 80px;
+	}
 	> .splash-image {
 		position: absolute;
 		height: 400px;
@@ -278,10 +300,14 @@ p {
 		font-size: 3rem;
 		margin-right: 20px;
 	}
+	> h2 {
+		text-decoration: none !important;
+		color: white !important;
+	}
 	@include for_breakpoint(mobile) {
 		border: 0 !important;
 		> i {
-			font-size: 1.2rem;
+			font-size: 1.8rem;
 		}
 		> h2 {
 			font-size: 2rem;
@@ -312,8 +338,14 @@ p {
 	padding: 0 40px;
 }
 .content-text {
+	&.side-by-side {
+		margin: 3em 0 !important;
+	}
 	> p {
 		margin: 2em;
+	}
+	> .content-side-by-side h2 {
+		margin: 1em 0 !important;
 	}
 	@include for_breakpoint(mobile) {
 		> p {
@@ -358,6 +390,8 @@ p {
 		margin: auto;
 	}
 	@include for_breakpoint(mobile) {
+		height: -webkit-fit-content !important;
+		height: -moz-fit-content !important;
 		height: fit-content !important;
 		> i {
 			font-size: 4em !important;
@@ -371,6 +405,9 @@ p {
 	flex-wrap: wrap;
 	gap: 2em;
 	margin-top: 4em;
+	@include for_breakpoint(mobile) {
+		margin-top: 1em !important;
+	}
 }
 .gallery-3-block {
 	display: flex;
@@ -395,6 +432,7 @@ p {
 	}
 	> img {
 		width: 100%;
+		-o-object-fit: cover;
 		object-fit: cover;
 		transition: transform 0.5s ease-in-out;
 		transform: scale(1);
@@ -541,7 +579,7 @@ p {
 }
 
 // Showing nav items as lines, making up the hamburger menu icon
-.nav-item {
+.nav-mobile-item {
 	position: relative;
 	display: inline-block;
 	float: left;

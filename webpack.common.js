@@ -13,7 +13,7 @@ module.exports = {
 		rules: [
 			{
 				test: /\.s?css$/,
-				use: ['style-loader', 'css-loader', 'sass-loader'],
+				use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
 			},
 			{
 				use: ['file-loader', 'extract-loader', 'html-loader'],
@@ -58,5 +58,6 @@ module.exports = {
 		new CopyPlugin({
 			patterns: [{ from: './src/assets', to: './assets' }],
 		}),
+		require('autoprefixer'),
 	],
 };
