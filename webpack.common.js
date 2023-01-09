@@ -32,24 +32,24 @@ module.exports = {
 			},
 		}),
 		new HtmlWebpackPlugin({
-			template: './src/what-we-do.html',
-			filename: './what-we-do.html',
+			template: './src/what-we-do/index.html',
+			filename: './what-we-do/index.html',
 			minify: {
 				removeComments: true,
 				collapseWhitespace: true,
 			},
 		}),
 		new HtmlWebpackPlugin({
-			template: './src/autoprotect.html',
-			filename: './autoprotect.html',
+			template: './src/partners/index.html',
+			filename: './partners/index.html',
 			minify: {
 				removeComments: true,
 				collapseWhitespace: true,
 			},
 		}),
 		new HtmlWebpackPlugin({
-			template: './src/contact-us.html',
-			filename: './contact-us.html',
+			template: './src/contact-us/index.html',
+			filename: './contact-us/index.html',
 			minify: {
 				removeComments: true,
 				collapseWhitespace: true,
