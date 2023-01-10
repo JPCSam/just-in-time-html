@@ -169,6 +169,8 @@ p {
 	height: 110px;
 	position: fixed;
 	background-color: $primary-colour;
+	-webkit-box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.5);
+	box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.5);
 	left: 0;
 	top: 0;
 	transition: ease 0.4s;
@@ -189,6 +191,7 @@ p {
 }
 .navbar-logo {
 	height: 100%;
+	width: 100px;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
@@ -507,6 +510,8 @@ p {
 	z-index: 999;
 	position: fixed;
 	background-color: $primary-colour;
+	-webkit-box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.5);
+	box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.5);
 }
 /* Toggle Functionality */
 #toggle {
