@@ -229,8 +229,10 @@ p {
 }
 .splash {
 	position: relative;
-	height: 100vh;
+	min-height: 100vh;
 	margin-top: 80px;
+	display: flex;
+	align-items: center;
 	@include for_breakpoint(mobile) {
 		margin-top: 0 !important;
 	}
@@ -256,7 +258,6 @@ p {
 	z-index: 2;
 }
 .splash-text {
-	height: 100%;
 	width: 100%;
 	position: absolute;
 	display: flex;
@@ -300,8 +301,7 @@ p {
 .number-prompt {
 	display: flex;
 	border: solid white 4px;
-	padding: 1.5em;
-	margin: 1.5em;
+	padding: 2em 0;
 	border-radius: 40px;
 	align-items: center;
 	> i {
