@@ -301,7 +301,8 @@ p {
 .number-prompt {
 	display: flex;
 	border: solid white 4px;
-	padding: 2em 0;
+	margin: 1.5em 0;
+	padding: 1.5em;
 	border-radius: 40px;
 	align-items: center;
 	> i {
@@ -313,6 +314,8 @@ p {
 		color: white !important;
 	}
 	@include for_breakpoint(mobile) {
+		margin: 0 !important;
+		padding: 1.5em 0 !important;
 		border: 0 !important;
 		> i {
 			font-size: 1.8rem;
