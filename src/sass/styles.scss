@@ -297,6 +297,9 @@ p {
 		width: 100%;
 		z-index: 1;
 	}
+	> .splash-text {
+		height: 100% !important;
+	}
 }
 .number-prompt {
 	display: flex;
