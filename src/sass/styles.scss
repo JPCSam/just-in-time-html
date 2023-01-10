@@ -665,6 +665,12 @@ p {
 .footer {
 	width: 100%;
 	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 0 1.2em;
+}
+.footer-wrapper {
+	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	@include for_breakpoint(mobile) {
@@ -723,5 +729,12 @@ p {
 				font-size: 1.5rem !important;
 			}
 		}
+	}
+}
+.footer-terms {
+	width: 100%;
+	margin-top: 1em;
+	> span {
+		font-size: 0.8rem;
 	}
 }
