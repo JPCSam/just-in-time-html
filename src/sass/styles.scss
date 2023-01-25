@@ -288,12 +288,14 @@ p {
 	gap: 3rem;
 	> .nav-item {
 		padding: 1.5rem;
+		position: relative;
 		> a {
 			font-family: $primary-font;
 			font-size: 1.2em;
 			font-weight: 600;
 			color: white;
 			text-decoration: none;
+			transition: all 0.5s;
 		}
 	}
 }
@@ -464,7 +466,6 @@ p {
 			}
 		}
 		.right-content {
-			width: 100vw;
 			display: flex;
 			flex-direction: column;
 			gap: 8rem;
@@ -1070,4 +1071,27 @@ p {
 	> span {
 		font-size: 0.8rem;
 	}
+}
+.hover-underline-animation {
+	display: inline-block;
+	position: relative;
+	color: #0087ca;
+}
+
+.hover-underline-animation::after {
+	content: '';
+	position: absolute;
+	width: 100%;
+	transform: scaleX(0);
+	height: 2px;
+	bottom: 0;
+	left: 0;
+	background-color: white;
+	transform-origin: bottom right;
+	transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover::after {
+	transform: scaleX(1);
+	transform-origin: bottom left;
 }
