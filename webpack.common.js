@@ -32,8 +32,8 @@ module.exports = {
 			},
 		}),
 		new HtmlWebpackPlugin({
-			template: './src/what-we-do/index.html',
-			filename: './what-we-do/index.html',
+			template: './src/servicing/index.html',
+			filename: './servicing/index.html',
 			minify: {
 				removeComments: true,
 				collapseWhitespace: true,
@@ -48,8 +48,8 @@ module.exports = {
 			},
 		}),
 		new HtmlWebpackPlugin({
-			template: './src/contact-us/index.html',
-			filename: './contact-us/index.html',
+			template: './src/contact/index.html',
+			filename: './contact/index.html',
 			minify: {
 				removeComments: true,
 				collapseWhitespace: true,

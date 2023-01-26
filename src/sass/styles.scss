@@ -535,7 +535,7 @@ p {
 	grid-area: cta-section-1;
 	background-position: center center;
 	background-size: cover;
-	background-image: url('../assets/images/about-us.webp');
+	background-image: url('../assets/images/cta_splash.webp');
 	> .card-grid {
 		display: grid;
 		grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(
@@ -557,46 +557,28 @@ p {
 	}
 }
 .mini-splash {
+	grid-area: splash;
 	position: relative;
-	height: 400px;
-	@include for_breakpoint(desktop) {
-		margin-top: 80px;
-	}
-	> .splash-image {
-		position: absolute;
-		height: 400px;
-		width: 100%;
-		z-index: 1;
-	}
+	height: 75vh;
+	display: flex;
+	justify-content: center;
 	> .splash-text {
 		height: 100% !important;
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
 	}
-}
-.number-prompt {
-	display: flex;
-	border: solid white 4px;
-	margin: 1.5em 0;
-	padding: 1.5em;
-	border-radius: 40px;
-	align-items: center;
-	> i {
-		font-size: 3rem;
-		margin-right: 20px;
+	&#servicing {
+		background-position: top center;
+		background-image: url('../assets/images/servicing_splash.webp');
 	}
-	> h2 {
-		text-decoration: none !important;
-		color: white !important;
-	}
-	@include for_breakpoint(mobile) {
-		margin: 0 !important;
-		padding: 1.5em 0 !important;
-		border: 0 !important;
-		> i {
-			font-size: 1.8rem;
-		}
-		> h2 {
-			font-size: 2rem;
-		}
+	&#contact {
+		background-position: top center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-image: url('../assets/images/contact_splash.webp');
 	}
 }
 .background-wrapper {
@@ -611,6 +593,9 @@ p {
 	justify-self: center;
 	justify-content: center;
 	justify-items: center;
+	#servicing {
+		grid-template-areas: 'reviews';
+	}
 }
 #review-section {
 	grid-area: reviews;
