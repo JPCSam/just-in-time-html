@@ -173,7 +173,8 @@ p {
 	grid-template-areas:
 		'nav nav nav'
 		'splash splash splash'
-		'content content content';
+		'content content content'
+		'footer footer footer';
 }
 .button {
 	border-radius: 10px;
@@ -559,7 +560,7 @@ p {
 .mini-splash {
 	grid-area: splash;
 	position: relative;
-	height: 75vh;
+	height: 60vh;
 	display: flex;
 	justify-content: center;
 	> .splash-text {
@@ -595,6 +596,9 @@ p {
 	justify-items: center;
 	#servicing {
 		grid-template-areas: 'reviews';
+	}
+	&#servicing-content {
+		grid-area: content;
 	}
 }
 #review-section {
@@ -680,12 +684,9 @@ p {
 		}
 	}
 }
-#services-main-cards {
-	grid-area: content;
-}
 .mini-cards {
 	position: relative;
-	top: -250px;
+	// top: -250px;
 	display: grid;
 	grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(
 			0,
@@ -1033,11 +1034,13 @@ p {
 	}
 }
 .footer {
+	grid-area: footer;
 	width: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	padding: 0 1.2em;
+	padding: 2rem 2rem;
+	background: $primary-gradient;
 }
 .footer-wrapper {
 	display: flex;
