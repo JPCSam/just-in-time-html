@@ -75,10 +75,6 @@ h1 {
 	color: black;
 	margin: 0;
 	line-height: 8rem;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
 	@include for_breakpoint(mobile) {
 		font-size: 3em;
 	}
@@ -90,10 +86,6 @@ h2 {
 	color: black;
 	margin: 0;
 	line-height: 3rem;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
 	@include for_breakpoint(mobile) {
 		font-size: 2em;
 	}
@@ -105,10 +97,6 @@ h3 {
 	font-size: 1.6rem;
 	color: black;
 	margin: 0;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
 }
 p {
 	font-family: $primary-font;
@@ -176,11 +164,11 @@ p {
 		'content content content';
 }
 .button {
+	width: fit-content;
 	border-radius: 10px;
 	font-family: $primary-font;
 	text-decoration: none;
-	margin: 2rem 0;
-	padding: 1.2rem;
+	padding: 20px;
 	background: $primary-gradient;
 	> span {
 		font-size: 1.2rem;
@@ -470,6 +458,24 @@ p {
 			flex-direction: column;
 			gap: 8rem;
 			padding: 4rem;
+			&.micro {
+				gap: 2rem;
+				@include for_breakpoint(mobile) {
+					margin-top: 0 !important;
+					> .content-text {
+						padding: 0 1.5rem;
+					}
+					> .services-card {
+						display: none;
+					}
+				}
+				> .content-text {
+					> h3 {
+						text-align: center;
+					}
+				}
+			}
+
 			.services-card {
 				width: 100%;
 				position: relative;
@@ -543,6 +549,10 @@ p {
 				1fr
 			);
 		grid-template-areas: '. content content .';
+		@include for_breakpoint(mobile) {
+			grid-template-columns: minmax(0, 1fr);
+			grid-template-areas: 'content';
+		}
 		> .content-text-card {
 			grid-area: content;
 		}
@@ -562,6 +572,9 @@ p {
 	height: 75vh;
 	display: flex;
 	justify-content: center;
+	&.micro {
+		height: 50vh;
+	}
 	> .splash-text {
 		height: 100% !important;
 		width: 100%;
@@ -579,6 +592,10 @@ p {
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-image: url('../assets/images/contact_splash.webp');
+	}
+	&#air-conditioning {
+		background-position: top center;
+		background-image: url('../assets/images/servicing_splash.webp');
 	}
 }
 .background-wrapper {
@@ -635,15 +652,9 @@ p {
 	border-radius: 10px;
 }
 .content-text {
-	> p {
-		margin: 2em;
-	}
-	> h3 {
-		margin: 2em;
-	}
 	@include for_breakpoint(mobile) {
 		> p {
-			margin: 1em 0 !important;
+			padding: 1em 0 !important;
 		}
 	}
 }
@@ -866,7 +877,7 @@ p {
 	width: 100%;
 	z-index: 999;
 	position: fixed;
-	background-color: $primary-colour;
+	background: $primary-gradient;
 	-webkit-box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.5);
 	box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.5);
 }
@@ -1031,6 +1042,14 @@ p {
 		transform: translateY(-50%) scaleY(5);
 		transition: $transition-duration;
 	}
+}
+.nav-mobile-title {
+	position: fixed;
+	top: 17.5px;
+	left: 50%;
+	font-family: 'Fugaz One';
+	color: white;
+	transform: translate(-50%);
 }
 .footer {
 	width: 100%;

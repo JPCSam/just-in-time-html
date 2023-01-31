@@ -55,6 +55,14 @@ module.exports = {
 				collapseWhitespace: true,
 			},
 		}),
+		new HtmlWebpackPlugin({
+			template: './src/servicing/air-conditioning/index.html',
+			filename: './servicing/air-conditioning/index.html',
+			minify: {
+				removeComments: true,
+				collapseWhitespace: true,
+			},
+		}),
 		new CopyPlugin({
 			patterns: [{ from: './src/assets', to: './assets' }],
 		}),
