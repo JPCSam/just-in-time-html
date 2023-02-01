@@ -40,8 +40,8 @@ module.exports = {
 			},
 		}),
 		new HtmlWebpackPlugin({
-			template: './src/partners/index.html',
-			filename: './partners/index.html',
+			template: './src/tyres/index.html',
+			filename: './tyres/index.html',
 			minify: {
 				removeComments: true,
 				collapseWhitespace: true,
