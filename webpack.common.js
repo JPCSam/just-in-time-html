@@ -63,6 +63,30 @@ module.exports = {
 				collapseWhitespace: true,
 			},
 		}),
+		new HtmlWebpackPlugin({
+			template: './src/servicing/brakes/index.html',
+			filename: './servicing/brakes/index.html',
+			minify: {
+				removeComments: true,
+				collapseWhitespace: true,
+			},
+		}),
+		new HtmlWebpackPlugin({
+			template: './src/servicing/diagnostics/index.html',
+			filename: './servicing/diagnostics/index.html',
+			minify: {
+				removeComments: true,
+				collapseWhitespace: true,
+			},
+		}),
+		new HtmlWebpackPlugin({
+			template: './src/servicing/batteries/index.html',
+			filename: './servicing/batteries/index.html',
+			minify: {
+				removeComments: true,
+				collapseWhitespace: true,
+			},
+		}),
 		new CopyPlugin({
 			patterns: [{ from: './src/assets', to: './assets' }],
 		}),
