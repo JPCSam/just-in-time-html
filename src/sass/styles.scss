@@ -7,7 +7,6 @@ $media_queries: (
 	'landscape': 'screen and (orientation:landscape) ',
 	'portrait': 'screen and (orientation:portrait) ',
 );
-
 @mixin for_breakpoint($breakpoints) {
 	$conditions: ();
 	@each $breakpoint in $breakpoints {
@@ -361,6 +360,12 @@ p {
 		rgba(255, 255, 255, 0) 100%
 	);
 	z-index: 3;
+	@include for_breakpoint(mobile) {
+		bottom: -1px;
+	}
+	@include for_breakpoint(tablet) {
+		bottom: -1px;
+	}
 }
 .splash-text {
 	position: absolute;
@@ -373,6 +378,13 @@ p {
 	height: 100%;
 	width: 100%;
 	z-index: 4;
+	@include for_breakpoint(mobile) {
+		padding: 0 1rem;
+		text-align: center;
+		> * {
+			width: 100%;
+		}
+	}
 }
 .splash-button {
 	position: relative;
@@ -608,6 +620,9 @@ p {
 	height: 60vh;
 	display: flex;
 	justify-content: center;
+	@include for_breakpoint(mobile) {
+		height: 35vh;
+	}
 	&.micro {
 		height: 50vh;
 	}
@@ -668,6 +683,11 @@ p {
 	padding: 4em 0;
 	@include for_breakpoint(mobile) {
 		width: 100vw !important;
+		padding: 2rem 1.5rem;
+	}
+	@include for_breakpoint(tablet) {
+		width: 100vw !important;
+		padding: 2rem 1.5rem;
 	}
 }
 .content-section {
@@ -749,6 +769,9 @@ p {
 	gap: 1rem;
 	margin: 3rem 0;
 	z-index: 9;
+	@include for_breakpoint(mobile) {
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+	}
 	> .mini-card {
 		position: relative;
 		display: flex;
@@ -807,10 +830,19 @@ p {
 			> span {
 				font-size: 1.2rem;
 				margin-left: 1rem;
+				@include for_breakpoint(mobile) {
+					display: flex;
+					margin-left: 0rem;
+					text-align: center;
+					width: 100% !important;
+				}
 				> i {
 					opacity: 0;
 					margin-left: 0rem;
 					transition: all 0.4s ease;
+					@include for_breakpoint(mobile) {
+						display: none !important;
+					}
 				}
 			}
 		}
