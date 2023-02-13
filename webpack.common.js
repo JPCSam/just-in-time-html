@@ -104,6 +104,14 @@ module.exports = {
 			},
 		}),
 		new HtmlWebpackPlugin({
+			template: './src/servicing/clutches/index.html',
+			filename: './servicing/clutches/index.html',
+			minify: {
+				removeComments: true,
+				collapseWhitespace: true,
+			},
+		}),
+		new HtmlWebpackPlugin({
 			template: './src/servicing/lighting/index.html',
 			filename: './servicing/lighting/index.html',
 			minify: {
@@ -122,6 +130,14 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			template: './src/servicing/dpf/index.html',
 			filename: './servicing/dpf/index.html',
+			minify: {
+				removeComments: true,
+				collapseWhitespace: true,
+			},
+		}),
+		new HtmlWebpackPlugin({
+			template: './src/mobile-services/index.html',
+			filename: './mobile-services/index.html',
 			minify: {
 				removeComments: true,
 				collapseWhitespace: true,

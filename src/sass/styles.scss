@@ -530,7 +530,71 @@ p {
 				height: 500px;
 				border-radius: 10px;
 				padding: 2rem;
-				background-image: url('../assets/images/car_servicing_repair.webp');
+				&#home-servicing-card {
+					background-image: url('../assets/images/car_servicing_repair.webp');
+				}
+				&#home-tyres-card {
+					background-size: cover;
+					background-image: url('../assets/images/tyres.webp');
+				}
+				&#home-flatbed-card {
+					background-size: cover;
+					background-image: url('../assets/images/recovery_truck.webp');
+				}
+				&#home-mobile-card {
+					background-size: cover;
+					background-image: url('../assets/images/jit_van.webp');
+				}
+				&#home-ev-card {
+					background-size: cover;
+					background-image: url('../assets/images/car_servicing_repair.webp');
+				}
+				&#aircon-card {
+					background-size: cover;
+					background-image: url('../assets/images/aircon.webp');
+				}
+				&#brakes-card {
+					background-size: cover;
+					background-image: url('../assets/images/brakes.webp');
+				}
+				&#diagnostics-card {
+					background-size: cover;
+					background-image: url('../assets/images/diagnostics_1.webp');
+				}
+				&#battery-card {
+					background-size: cover;
+					background-image: url('../assets/images/battery.webp');
+				}
+				&#suspension-card {
+					background-position: center center;
+					background-size: cover;
+					background-image: url('../assets/images/suspension.webp');
+				}
+				&#exhausts-card {
+					background-position: center center;
+					background-size: cover;
+					background-image: url('../assets/images/exhausts.webp');
+				}
+				&#clutches-card {
+					background-position: center center;
+					background-size: cover;
+					background-image: url('../assets/images/clutch.webp');
+				}
+				&#lighting-card {
+					background-position: center center;
+					background-size: cover;
+					background-image: url('../assets/images/headlights.webp');
+				}
+				&#repairs-card {
+					background-position: center center;
+					background-size: cover;
+					background-image: url('../assets/images/car_servicing_repair.webp');
+				}
+				&#dpf-card {
+					background-position: center center;
+					background-size: cover;
+					background-image: url('../assets/images/exhausts.webp');
+				}
 				> .service-info {
 					position: absolute;
 					left: 50%;
@@ -638,15 +702,71 @@ p {
 		background-position: top center;
 		background-image: url('../assets/images/servicing_splash.webp');
 	}
+	&#tyres-splash {
+		background-position: top center;
+		background-size: cover;
+		background-image: url('../assets/images/tyres.webp');
+	}
+	&#mobile-splash {
+		background-position: top center;
+		background-size: cover;
+		background-image: url('../assets/images/recovery_truck.webp');
+	}
 	&#contact {
 		background-position: top center;
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-image: url('../assets/images/contact_splash.webp');
 	}
-	&#air-conditioning {
+	&#ac-splash {
 		background-position: top center;
-		background-image: url('../assets/images/servicing_splash.webp');
+		background-size: cover;
+		background-image: url('../assets/images/aircon.webp');
+	}
+	&#brakes-splash {
+		background-position: center center;
+		background-size: cover;
+		background-image: url('../assets/images/brakes.webp');
+	}
+	&#diagnostic-splash {
+		background-position: center center;
+		background-size: cover;
+		background-image: url('../assets/images/diagnostics_1.webp');
+	}
+	&#battery-splash {
+		background-position: center center;
+		background-size: cover;
+		background-image: url('../assets/images/battery.webp');
+	}
+	&#suspension-splash {
+		background-position: center center;
+		background-size: cover;
+		background-image: url('../assets/images/suspension.webp');
+	}
+	&#exhausts-splash {
+		background-position: center center;
+		background-size: cover;
+		background-image: url('../assets/images/exhausts.webp');
+	}
+	&#clutches-splash {
+		background-position: center center;
+		background-size: cover;
+		background-image: url('../assets/images/clutch.webp');
+	}
+	&#lighting-splash {
+		background-position: center center;
+		background-size: cover;
+		background-image: url('../assets/images/headlights.webp');
+	}
+	&#repairs-splash {
+		background-position: center center;
+		background-size: cover;
+		background-image: url('../assets/images/car_servicing_repair.webp');
+	}
+	&#dpf-splash {
+		background-position: center center;
+		background-size: cover;
+		background-image: url('../assets/images/exhausts.webp');
 	}
 }
 .background-wrapper {
@@ -831,11 +951,11 @@ p {
 			cursor: pointer;
 			transform: scale(1);
 			transition: transform 0.4s ease;
-			> .card-bg {
-				opacity: 0;
-				transition: opacity 0.4s ease;
-			}
-			> .card-button {
+			> a {
+				> .card-bg {
+					opacity: 0;
+					transition: opacity 0.4s ease;
+				}
 				> span {
 					> i {
 						opacity: 1;
