@@ -87,6 +87,46 @@ module.exports = {
 				collapseWhitespace: true,
 			},
 		}),
+		new HtmlWebpackPlugin({
+			template: './src/servicing/suspension/index.html',
+			filename: './servicing/suspension/index.html',
+			minify: {
+				removeComments: true,
+				collapseWhitespace: true,
+			},
+		}),
+		new HtmlWebpackPlugin({
+			template: './src/servicing/exhaust/index.html',
+			filename: './servicing/exhaust/index.html',
+			minify: {
+				removeComments: true,
+				collapseWhitespace: true,
+			},
+		}),
+		new HtmlWebpackPlugin({
+			template: './src/servicing/lighting/index.html',
+			filename: './servicing/lighting/index.html',
+			minify: {
+				removeComments: true,
+				collapseWhitespace: true,
+			},
+		}),
+		new HtmlWebpackPlugin({
+			template: './src/servicing/repairs/index.html',
+			filename: './servicing/repairs/index.html',
+			minify: {
+				removeComments: true,
+				collapseWhitespace: true,
+			},
+		}),
+		new HtmlWebpackPlugin({
+			template: './src/servicing/dpf/index.html',
+			filename: './servicing/dpf/index.html',
+			minify: {
+				removeComments: true,
+				collapseWhitespace: true,
+			},
+		}),
 		new CopyPlugin({
 			patterns: [{ from: './src/assets', to: './assets' }],
 		}),
