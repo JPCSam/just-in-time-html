@@ -40,8 +40,8 @@ module.exports = {
 			},
 		}),
 		new HtmlWebpackPlugin({
-			template: './src/tyres/index.html',
-			filename: './tyres/index.html',
+			template: './src/servicing/tyres/index.html',
+			filename: './servicing/tyres/index.html',
 			minify: {
 				removeComments: true,
 				collapseWhitespace: true,
@@ -138,6 +138,14 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			template: './src/mobile-services/index.html',
 			filename: './mobile-services/index.html',
+			minify: {
+				removeComments: true,
+				collapseWhitespace: true,
+			},
+		}),
+		new HtmlWebpackPlugin({
+			template: './src/servicing/services/index.html',
+			filename: './servicing/services/index.html',
 			minify: {
 				removeComments: true,
 				collapseWhitespace: true,

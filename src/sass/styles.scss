@@ -104,6 +104,10 @@ p {
 	line-height: 1.8rem;
 	color: black;
 }
+.underline {
+	text-decoration: underline #9f0004 solid 4px;
+	text-underline-offset: 0.5rem;
+}
 .hide-on-mobile {
 	@include for_breakpoint(mobile) {
 		display: none !important;
@@ -480,6 +484,9 @@ p {
 		background-size: 100%;
 		background-image: url('../assets/images/just-in-time_gear_pattern.webp');
 		opacity: 0.05;
+		@include for_breakpoint(mobile) {
+			background-size: 200% !important;
+		}
 	}
 	> .content-section {
 		display: grid;
@@ -723,6 +730,11 @@ p {
 		background-size: cover;
 		background-image: url('../assets/images/aircon.webp');
 	}
+	&#vehicle-servicing-splash {
+		background-position: top center;
+		background-size: cover;
+		background-image: url('../assets/images/car_servicing_repair.webp');
+	}
 	&#brakes-splash {
 		background-position: center center;
 		background-size: cover;
@@ -898,6 +910,7 @@ p {
 				min-height: 225px;
 				max-height: 225px;
 				overflow: auto;
+				border-bottom: solid 2px #9f0004;
 				&::-webkit-scrollbar-track {
 					border-radius: 10px;
 					background-color: rgba(0, 0, 0, 0);
@@ -938,11 +951,7 @@ p {
 	}
 	> .mini-card {
 		position: relative;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 1.2rem !important;
+		padding: 0 !important;
 		background: $primary-gradient;
 		overflow: hidden;
 		transform: scale(0.95);
@@ -952,10 +961,6 @@ p {
 			transform: scale(1);
 			transition: transform 0.4s ease;
 			> a {
-				> .card-bg {
-					opacity: 0;
-					transition: opacity 0.4s ease;
-				}
 				> span {
 					> i {
 						opacity: 1;
@@ -965,37 +970,42 @@ p {
 				}
 			}
 		}
-		> .card-bg {
-			position: absolute;
+		> a {
+			padding: 1.2rem !important;
 			width: 100%;
-			height: 100%;
-			background: rgb(150, 150, 150);
-			opacity: 0.3;
-			z-index: 1;
-			transition: opacity 0.5s ease;
-			> img {
-				height: 100%;
-				width: 100%;
-				object-fit: cover;
-				opacity: 0.4;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			text-decoration: none !important;
+			> .mini-card-icon {
+				display: flex;
+				justify-content: center;
 			}
-		}
-		> img {
-			width: 50%;
-			z-index: 2;
-		}
-		> .card-button {
-			margin: 1.5rem 0;
-			margin-bottom: 0;
-			background: none !important;
-			z-index: 2;
-			font-family: $primary-font;
-			text-decoration: none;
+			> .card-bg {
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				background-position: center center;
+				background-size: 100%;
+				background-image: url('../assets/images/just-in-time_gear_pattern.webp');
+				opacity: 0.75;
+				z-index: -1;
+			}
+			> img {
+				width: 50%;
+				z-index: 2;
+			}
 			> span {
+				margin-top: 1rem;
 				font-size: 1.2rem;
 				margin-left: 1rem;
+				font-family: $primary-font;
 				@include for_breakpoint(mobile) {
 					display: flex;
+					justify-content: center;
 					margin-left: 0rem;
 					text-align: center;
 					width: 100% !important;
@@ -1368,6 +1378,7 @@ p {
 	padding: 2em 0;
 }
 .contact-block {
+	min-height: 63px;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -1381,13 +1392,16 @@ p {
 	margin-top: 1.5rem;
 	@include for_breakpoint(mobile) {
 		width: 100%;
-		padding-left: 1rem;
+		padding-left: 0;
+		justify-content: center;
 	}
 	> .button {
+		min-width: 200px;
 		margin-left: 2rem;
 		border-radius: 0;
 		@include for_breakpoint(mobile) {
 			margin-left: 0;
+			width: 100% !important;
 		}
 	}
 	> div {
