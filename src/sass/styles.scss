@@ -706,6 +706,13 @@ p {
 		flex-direction: row;
 		justify-content: center;
 		align-items: center;
+		margin-top: 80px;
+		@include for_breakpoint(mobile) {
+			margin-top: 30px;
+		}
+		@include for_breakpoint(tablet) {
+			margin-top: 15px;
+		}
 	}
 	&#servicing {
 		background-position: top center;
@@ -814,7 +821,7 @@ p {
 	width: $page-width;
 	display: flex;
 	justify-content: center;
-	padding: 4em 0;
+	padding: 4em 2em;
 	@include for_breakpoint(mobile) {
 		width: 100vw !important;
 		padding: 2rem 1.5rem;
